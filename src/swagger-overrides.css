@@ -1,0 +1,32 @@
+
+.swagger-ui .topbar {
+    background-color: #353535 !important; /* Muda a cor da barra superior */
+  }
+ 
+  .swagger-ui .btn {
+    background-color: #bfdaf7; /* Altera a cor dos botões */
+    border: #bfdaf7;
+}
+
+  .swagger-ui .topbar-wrapper .link {
+    background: url('./assets/image.psd.svg') no-repeat center center; /* Caminho do seu SVG */
+    background-size: contain; /* Ajusta o SVG para caber no elemento */
+    width: 150px; /* Ajuste conforme necessário */
+    height: 40px; /* Ajuste conforme necessário */
+  }
+  
+  .swagger-ui .topbar-wrapper .link svg {
+    display: none; /* Oculta o SVG original */
+  }
+
+  .swagger-ui .response-control-media-type--accept-controller select {
+    border-color: #babbbc;
+}
+
+.swagger-ui .opblock.opblock-post .tab-header .tab-item.active h4 span:after {
+    background:  #bfdaf7;
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary {
+    border-color: #babbbc;
+}

@@ -1,0 +1,101 @@
+openapi: 3.0.0
+info:
+  title: API NAI Documentation
+  version: 1.0.0
+  description: Documentação da API NAI com caminhos fictícios `(Lembrar sempre que os caminhos utilizados logo depois do "/execJuc/(algumaCoisa)" é fictício, o caminho original vai somente até o /execJuc e nada além disso)`
+
+tags:
+  - name: Certification
+    description: Endpoints relacionados ao retorno da certificação de nível.
+
+paths:
+  /NAI/rest/execJUC/certification:
+    post:
+      tags:
+        - Certification
+      summary: Executa o endpoint para certificação
+      description: |
+
+        `getWayReturnCertificationLevelExt` Este endpoint realiza uma consulta ao sistema externo e retorna os dados requisitados para certificação.
+
+        `CURRENT_CERTIFICATION` Certificação verificado pela apuração da Due Diligence, que pode ser atualizada a medida que os riscos forem sendo resolvidos.
+
+        `CURRENT_CERTIFICATION_DATE` Data da certificação vigente. Data que foi respondido a Due Diligence, que servirá como base para o controle de nova certificação.
+
+        `NEXT_CERTIFICATION_DATE` Data da próxima certificação, ou Data que expira a certificação vigente.
+
+        `CERTIFICATION_STATUS` Status da certificação. Esse retorno pode conter mais conteúdo e é um descritivo da certificação. Pode vir por exemplo: “Não certificado por pendência financeira”.
+
+        `CERTIFICATION_REQUIRED` De acordo com o cadastro do fornecedor, qual foi o selo de certificação que foi indicado para o fornecedor que precisa ser atendido. Pode ser: “Bronze”, “Silver”, “Gold”, “Platinum”.
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertLevelRequest'
+      responses: 
+        '200':
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  CURRENT_CERTIFICATION:
+                    type: string
+                    example: "Não certificado"
+                  CURRENT_CERTIFICATION_DATE:
+                    type: string
+                    format: date-time
+                    example: "2024-09-23 16:09:17.0"
+                  NEXT_CERTIFICATION_DATE:
+                    type: string
+                    format: date-time
+                    example: "2025-09-23 18:00:00.0"
+                  CERTIFICATION_STATUS:
+                    type: string
+                    example: "Não qualificado"
+                  CERTIFICATION_REQUIRED:
+                    type: string
+                    example: "Bronze"
+
+        '400':
+          description: Requisição inválida
+        '500':
+          description: Erro no servidor
+
+
+components:
+  schemas:
+    CertLevelRequest:
+      type: object
+      properties:
+        parameters:
+          type: array
+          items:
+            type: object
+            properties:
+              start:
+                type: string
+                example: "0"
+              end:
+                type: string
+                example: "1000"
+              juc:
+                type: string
+                example: "getWayReturnCertificationLevelExt"
+              alias:
+                type: string
+                example: "devGRCWAY@4"
+              onlydata:
+                type: string
+                example: "true"
+              token:
+                type: string
+                example: "Rzo7{Bb}FAMjkPnqrg1zUSdVsX0lWK8wu1CODzCPHOgIRzKJ7xGW3s{Bb}HLOC9Kj{Bb}gXHXBWemIS0B1T9L{|}9t+k1qHoe4Urgo2yUfzZUM2Vvvk8mvA{eQ}"
+              variables:
+                type: string
+                example: "CODE_SUPPLIER=98404645000194, LANGUAGE_VISUALIZATION=PT-BR"
+
+    
