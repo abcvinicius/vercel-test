@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+# Como Rodar o Swagger com o Endpoint Disponível
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta documentação explica como configurar e executar o Swagger localmente para explorar o endpoint configurado.
 
-Currently, two official plugins are available:
+## Sobre o Swagger
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O Swagger permite visualizar e testar os endpoints disponíveis de forma interativa, proporcionando facilidade na integração e validação das APIs.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Como Rodar o Swagger
 
-- Configure the top-level `parserOptions` property like this:
+### Pré-requisitos
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. **Node.js e npm**: Certifique-se de ter o Node.js instalado.
+2. **Docker** (Opcional): Caso queira rodar a aplicação via contêiner.
+
+---
+
+### Passo 1: Clone o Repositório
+
+```bash
+git clone https://github.com/nai-it/grcway_docs.git
+cd grcway_docs-master
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Passo 2: Instale as Dependências
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
+```
+
+---
+
+### Passo 3: Inicie o Swagger
+
+```bash
+npm run dev
+```
+
+---
+
+### Passo 5: Testando o Swagger
+
+```bash
+Acesse a interface do Swagger pelo navegador no endereço: http://localhost:3000.
+Navegue pelos endpoints disponíveis, visualize a documentação detalhada e execute requisições diretamente pela interface.
 ```
