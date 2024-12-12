@@ -45,6 +45,6 @@ npm run dev
 ### Passo 5: Testando o Swagger
 
 ```bash
-Acesse a interface do Swagger pelo navegador no endereço: http://localhost:3000.
+Acesse a interface do Swagger pelo navegador no endereço: http://localhost:3001.
 Navegue pelos endpoints disponíveis, visualize a documentação detalhada e execute requisições diretamente pela interface.
 ```
