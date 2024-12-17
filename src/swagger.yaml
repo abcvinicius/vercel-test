@@ -87,13 +87,13 @@ components:
                 example: "getWayReturnCertificationLevelExt"
               alias:
                 type: string
-                example: "devGRCWAY@4"
+                example: "prdGRCWAY@3"
               onlydata:
                 type: string
                 example: "true"
               token:
                 type: string
-                example: "Rzo7{Bb}FAMjkPnqrg1zUSdVsX0lWK8wu1CODzCPHOgIRzKJ7xGW3s{Bb}HLOC9Kj{Bb}gXHXBWemIS0B1T9L{|}9t+k1qHoe4Urgo2yUfzZUM2Vvvk8mvA{eQ}"
+                example: "nsuqsnd1yh2Lcyt7c51bRO+oJBWpPqYKiHJYByvMtc1rf{Bb}JbbXcmf4hhnb6jlTzO6hg958AXmQkD{|}Ntl84riVMNs8r7neRh0Z9jJ5zBhf1A6aPIrQzZAXLQ{eQ}{eQ}"
               variables:
                 type: string
                 example: "CODE_SUPPLIER=98404645000194, LANGUAGE_VISUALIZATION=PT-BR"
