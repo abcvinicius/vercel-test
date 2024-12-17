@@ -64,7 +64,7 @@ app.post('/NAI/rest/execJUC/certification', (req: Request, res: Response) => {
 });
 
 // Inicia o servidor
-const PORT = 3001;
+const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}/api-docs`);
 });
